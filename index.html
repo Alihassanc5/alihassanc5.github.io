@@ -1,1 +1,240 @@
-Hello, world! This is my personal page hosted on GitHub pages.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      color: #333;
+    }
+    .bismillah {
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      font-family: 'Great Vibes', cursive;
+      color: #4a148c;
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: url('https://via.placeholder.com/800x400') no-repeat center center/cover;
+      color: white;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 20px;
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .groom-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px auto;
+      border: 5px solid #e91e63;
+    }
+    .couple-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      color: #c2185b;
+      margin-top: 10px;
+    }
+    .details-section {
+      background: #fef4f8;
+      padding: 40px 20px;
+    }
+    .venue-section {
+      background: #fef4f8;
+      padding: 40px 20px;
+    }
+    .details {
+      margin: 30px 0;
+      font-size: 18px;
+    }
+    .countdown {
+      font-size: 22px;
+      color: #d81b60;
+      margin-top: 20px;
+    }
+    .rsvp-section {
+      background: #ede7f6;
+      padding: 30px 20px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+    .rsvp-person {
+      margin-bottom: 30px;
+    }
+    .rsvp-section img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .rsvp-section h3 {
+      color: #4a148c;
+    }
+    .footer {
+      padding: 30px 20px;
+      background: #fce4ec;
+      text-align: center;
+      font-size: 14px;
+    }
+    .map {
+      margin-top: 20px;
+    }
+    /* Add these new styles */
+    .venue-image {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .venue-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+    .map-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #1e88e5;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+      .couple-name {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bismillah">بِسْمِ ٱللَّهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ
+  </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>You're Invited</h1>
+      <p>To the Walima Ceremony of</p>
+    </div>
+  </section>
+
+  <section class="section details-section">
+    <img src="images/kamran.jpeg" alt="Groom" class="groom-image">
+    <div class="couple-name">Muhammad Kamran Bhatti & Komal Niyamat</div>
+    <div class="details">
+      <p>We request the pleasure of your company at the Walima ceremony of our beloved son</p>
+    </div>
+  </section>
+
+  <section class="section venue-section">
+    <div class="details">
+      <p><strong>Date:</strong> 21 April, 2025</p>
+      <p><strong>Time:</strong> 12:00 PM - 4:00 PM</p>
+      <p><strong>Venue:</strong> Gulshan Banquet Hall, Lahore</p>
+    </div>
+    <div class="countdown" id="countdown"></div>
+    <div class="map">
+      <div class="venue-image">
+        <img src="https://images.weddified.com/images/10.190397459940452982022-06-05%20-%20Copy%20(3).jpg"
+          alt="Venue Image"
+          class="centered-image">
+      </div>
+      <a href="https://www.google.com/maps?sca_esv=19aa45a30cbdc0a6&gs_lp=Egxnd3Mtd2l6LXNlcnAiC2d1bHNoYW4gYmFuKgIIATILEAAYgAQYkQIYigUyERAuGIAEGJECGMcBGIoFGK8BMg4QABiABBiRAhjJAxiKBTILEC4YgAQYkQIYigUyBRAAGIAEMg0QLhiABBjHARgKGK8BMgsQABiABBiRAhiKBTIFEAAYgAQyBRAuGIAEMgUQABiABEjPLVDdC1isHXADeAGQAQCYAfQCoAG-F6oBBjItMTAuMbgBA8gBAPgBAZgCDqACkxioAgrCAgoQABiwAxjWBBhHwgIUEAAYgAQYkQIYtAIYigUY6gLYAQHCAhoQLhiABBiRAhi0AhjHARiKBRjqAhivAdgBAcICIxAuGIAEGJECGLQCGMcBGJgFGJkFGIoFGOoCGJ4FGK8B2AEBwgIQEAAYAxi0AhjqAhiPAdgBAcICEBAuGIAEGEMYxwEYigUYrwHCAgoQABiABBhDGIoFwgIQEAAYgAQYsQMYQxiDARiKBcICFhAuGIAEGLEDGNEDGEMYgwEYxwEYigXCAg4QABiABBixAxiDARiKBcICCxAAGIAEGLEDGIMBwgIIEAAYgAQYsQPCAhoQLhiABBiRAhiKBRiXBRjcBBjeBBjgBNgBAsICChAuGIAEGEMYigXCAg4QLhiABBixAxjRAxjHAcICDhAuGIAEGJECGLEDGIoFwgIWEC4YgAQYQxjHARiYBRiZBRiKBRivAcICEBAuGIAEGLEDGEMYgwEYigXCAg0QLhiABBixAxhDGIoFwgIREC4YgAQYsQMYgwEYxwEYrwHCAh0QLhiABBiRAhixAxiKBRiXBRjcBBjeBBjgBNgBAsICCBAAGIAEGMkDmAMJ8QX_qpcwzTzKO4gGAZAGAroGBAgBGAe6BgYIAhABGBSSBwgzLjAuMTAuMaAHirACsgcGMi0xMC4xuAeDGA&um=1&ie=UTF-8&fb=1&gl=pk&sa=X&geocode=KcuVhJQzAxk5MSu8x2MrEMVh&daddr=Moon+Market+Park,+%E2%80%8FMain+Blvd+Gulshan-e-Ravi,+E+Block+Block+E+Gulshan-e-Ravi,+Lahore,+54000" target="_blank" class="map-button">Get Directions</a>
+    </div>
+  </section>
+
+  <section class="section rsvp-section">
+    <div class="rsvp-person">
+      <img src="images/mohsin.jpeg" alt="Mohsin Bhatti">
+      <h3>Mohsin Bhatti</h3>
+      <p><strong>Phone:</strong> 03328496003</p>
+      <a href="https://wa.me/923001234567" class="map-button">WhatsApp</a>
+    </div>
+    <div class="rsvp-person">
+      <img src="images/adnan.jpeg" alt="Adnan Bhatti">
+      <h3>Adnan Bhatti</h3>
+      <p><strong>Phone:</strong> 03270083472</p>
+      <a href="https://wa.me/923007654321" class="map-button">WhatsApp</a>
+    </div>
+    <div class="rsvp-person">
+      <img src="images/shehroz.jpeg" alt="Shehroz Bhatti">
+      <h3>Shehroz Bhatti</h3>
+      <p><strong>Phone:</strong> 03289725735</p>
+      <a href="https://wa.me/923101122334" class="map-button">WhatsApp</a>
+    </div>
+  </section>
+
+  <div class="footer">
+    Made with love for the special day 💕<br>
+    Looking forward to celebrating with you!<br>
+    <a href="https://www.instagram.com/alihassanc5" target="_blank">Designed by @alihassanc5</a>
+  </div>
+
+  <script>
+    const countdown = document.getElementById("countdown");
+    const eventDate = new Date("April 21, 2025 12:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const gap = eventDate - now;
+
+      if (gap <= 0) {
+        countdown.innerHTML = "The event has begun!";
+        return;
+      }
+
+      const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((gap % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `⏳ Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
